@@ -82,7 +82,7 @@ commit() {
     printf "%s" "${GREEN} No commits found in current branch: ${YELLOW}${currentBranch}${NC}, compared to: ${YELLOW}${compareToBranch}${NC} ${NC}"
     store_exit_code "$?" "Commit" "${MISSING} ${RED}Commit check count failed, see logs (std out) and fix problems.${NC}\n" "${YELLOW}${CHECKMARK}${CHECKMARK} Commit check skipped, no new commits found in current branch: ${YELLOW}${currentBranch}${NC}\n"
   else
-    docker run --rm -i --volume "$(pwd)":/repo -w /repo ghcr.io/siderolabs/conform:latest enforce --base-branch="${compareToBranch}"
+    docker run --rm -i --volume "$(pwd)":/repo -w /repo ghcr.io/siderolabs/conform:latest enforce
     store_exit_code "$?" "Commit" "${MISSING} ${RED}Commit check failed, see logs (std out) and fix problems.${NC}\n" "${GREEN}${CHECKMARK}${CHECKMARK} Commit check passed${NC}\n"
   fi
 
