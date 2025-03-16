@@ -6,4 +6,4 @@ SPDX-License-Identifier: GPL-3.0-only
 
 # foss-template
 
-Aproject template containing default open source files for new projects
+A project template containing default open source files for new projects
